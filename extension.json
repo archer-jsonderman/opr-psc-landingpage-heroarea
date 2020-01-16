@@ -1,0 +1,10 @@
+{
+  "id": "opr-psc-landingpage-heroarea",
+  "name": "Landing: Hero Area",
+  "srcdoc": "./build/index.html",
+  "sidebar":false,
+  "fieldTypes": [
+    "Asset",
+    "Object"
+  ]
+}
