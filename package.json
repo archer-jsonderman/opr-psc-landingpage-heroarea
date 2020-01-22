@@ -16,13 +16,15 @@
     "contentful-cli": "^1.1.5",
     "cssnano": "4.1.10",
     "eslint": "^6.6.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "sass": "^1.25.0"
   },
   "dependencies": {
     "@contentful/forma-36-fcss": "0.0.17",
     "@contentful/forma-36-react-components": "3.0.0",
     "@contentful/forma-36-tokens": "0.3.0",
     "@fonticonpicker/react-fonticonpicker": "^1.2.0",
+    "@svgr/parcel-plugin-svgr": "^5.1.0",
     "@tinymce/tinymce-react": "^3.3.2",
     "classnames": "^2.2.6",
     "contentful": "^7.9.1",

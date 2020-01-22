@@ -9,11 +9,12 @@ import { Spinner, TextField, Textarea } from "@contentful/forma-36-react-compone
 import Uploader from "./components/imageUploader"
 import Headline from "./components/headline"
 import Repeater from "./components/repeater"
-import {ReactComponent as SvgSymbols} from './components/icons/icon-alarm.svg';//defs/svg-defs.svg'
 import "./index.css"
 
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+
+import SvgSymbols from "./components/icons/symbol-defs.svg"
 
 //load stateless components to make up the Hero Area Manager.
 //this version includes headline, icon repeater, and bg image picker
@@ -22,6 +23,17 @@ const initialData = {
 	isDraggingOver: false,
 		headline:'',
 		image:'',
+		items:
+			[
+		        {
+		            "id": "item",
+		            "content": {
+		                "icon": "",
+		                "tagline": ""
+		            },
+		            "index": 0
+		        }
+		    ]
 		
 	
 }
@@ -46,6 +58,7 @@ constructor(props){
     this.props.sdk.window.startAutoResizer()
 	// Handler for external field value changes (e.g. when multiple authors are working on the same entry).
     this.detachExternalChangeHandler = this.props.sdk.field.onValueChanged(this.onExternalChange)
+   // this.setState({icon:'symbol-defs_svg__icon-no-gre'})
 
   }
   componentWillUnmount() {
@@ -72,12 +85,14 @@ constructor(props){
   render = () => {
       return ( 
 	      <>
-	      <SvgSymbols/>
+	      <SvgSymbols className='symbols'/>
 		    <Headline 
 		    	onStateChange={this.handleStateChange}
 		    	{...this.state}/>
 		    <Repeater
 		    	sdk={this.props.sdk}
+		    	onStateChange={this.handleStateChange}
+		    	title = 'Hero Area Icons'
 		    	{...this.state}
 		    />
 		  	<Uploader 
