@@ -69919,10 +69919,7 @@ class App extends _react.default.Component {
       this.props.sdk.field.setValue(this.state);
     };
 
-    this.onExternalChange = value => {
-      this.setState({
-        value
-      });
+    this.onExternalChange = value => {//this.setState({ value })
     };
 
     this.render = () => {
@@ -69946,8 +69943,7 @@ class App extends _react.default.Component {
       pagevalue = initialData;
     }
 
-    if (!pagevalue.image) pagevalue.image = {}; //console.log(pagevalue)
-
+    if (!pagevalue.image) pagevalue.image = {};
     this.state = pagevalue;
   }
 
@@ -69955,10 +69951,12 @@ class App extends _react.default.Component {
     this.props.sdk.window.startAutoResizer(); // Handler for external field value changes (e.g. when multiple authors are working on the same entry).
 
     this.detachExternalChangeHandler = this.props.sdk.field.onValueChanged(this.onExternalChange); // this.setState({icon:'symbol-defs_svg__icon-no-gre'})
+
+    console.log(this.state);
   }
 
-  componentWillUnmount() {
-    this.detachExternalChangeHandler();
+  componentWillUnmount() {//need to add this or onExternal Change will keep nesting value objects in state
+    //this.detachExternalChangeHandler()
   }
 
 }
@@ -70003,7 +70001,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53827" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55097" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

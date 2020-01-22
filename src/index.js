@@ -49,7 +49,6 @@ constructor(props){
 		pagevalue = initialData
 	}
 	if(!pagevalue.image)pagevalue.image={};
-	//console.log(pagevalue)
 	this.state = pagevalue
 }
   
@@ -59,10 +58,12 @@ constructor(props){
 	// Handler for external field value changes (e.g. when multiple authors are working on the same entry).
     this.detachExternalChangeHandler = this.props.sdk.field.onValueChanged(this.onExternalChange)
    // this.setState({icon:'symbol-defs_svg__icon-no-gre'})
+   console.log(this.state)
 
   }
   componentWillUnmount() {
-    this.detachExternalChangeHandler()
+	  //need to add this or onExternal Change will keep nesting value objects in state
+    //this.detachExternalChangeHandler()
   }
   
    handleStateChange =(target,newState)=>{
@@ -79,7 +80,7 @@ constructor(props){
 	  this.props.sdk.field.setValue(this.state)
   }
    onExternalChange = value => {
-    this.setState({ value })
+    //this.setState({ value })
   }
  
   render = () => {
