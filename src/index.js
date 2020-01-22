@@ -56,9 +56,7 @@ constructor(props){
   componentDidMount() {
     this.props.sdk.window.startAutoResizer()
 	// Handler for external field value changes (e.g. when multiple authors are working on the same entry).
-    this.detachExternalChangeHandler = this.props.sdk.field.onValueChanged(this.onExternalChange)
-   // this.setState({icon:'symbol-defs_svg__icon-no-gre'})
-   console.log(this.state)
+    //this.detachExternalChangeHandler = this.props.sdk.field.onValueChanged(this.onExternalChange)
 
   }
   componentWillUnmount() {

@@ -69949,10 +69949,7 @@ class App extends _react.default.Component {
 
   componentDidMount() {
     this.props.sdk.window.startAutoResizer(); // Handler for external field value changes (e.g. when multiple authors are working on the same entry).
-
-    this.detachExternalChangeHandler = this.props.sdk.field.onValueChanged(this.onExternalChange); // this.setState({icon:'symbol-defs_svg__icon-no-gre'})
-
-    console.log(this.state);
+    //this.detachExternalChangeHandler = this.props.sdk.field.onValueChanged(this.onExternalChange)
   }
 
   componentWillUnmount() {//need to add this or onExternal Change will keep nesting value objects in state
@@ -70001,7 +69998,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55097" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61950" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
