@@ -7,14 +7,9 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.bubble.css';
 import {
 	CardDragHandle,
-	EntryCard, 
-	ModalConfirm,
 	Button,
-	Form,
-	TextInput,
-	Textarea,
-	TextField,
-	Icon} from '@contentful/forma-36-react-components';
+	Icon,
+	FormLabel} from '@contentful/forma-36-react-components';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import FontIconPicker from '@fonticonpicker/react-fonticonpicker';
 import '@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.base-theme.react.css';
@@ -197,7 +192,12 @@ export default class Repeater extends React.Component {
   	render() {
 	    return (
 		    <>
-		   		<label className="FormLabel__FormLabel___3d6zQ">{this.props.title}</label>
+		   	 <FormLabel
+				  htmlFor="sortableList"
+				  required={false}
+				>
+				 {this.props.title}
+				 </FormLabel>
 		    <SortableList 
 			    items={this.props.items} 
 			    axis='xy'

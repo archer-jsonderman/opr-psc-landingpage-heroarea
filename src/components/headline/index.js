@@ -1,10 +1,10 @@
 import React from "react";
 import { init } from "contentful-ui-extensions-sdk";
 import "@contentful/forma-36-react-components/dist/styles.css"
-import {TextField, Textarea } from "@contentful/forma-36-react-components"
+import {FormLabel} from "@contentful/forma-36-react-components"
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-
+import 'react-quill/dist/quill.bubble.css';
+import './index.scss'
 export default class Headline extends React.Component{
 	constructor(props){
 		super(props)
@@ -26,13 +26,19 @@ export default class Headline extends React.Component{
 		//headline must be empty string and n ot undefined object or Quill has an issue
 		return(
 			<>
-				<label className="FormLabel__FormLabel___3d6zQ" data-test-id="cf-ui-form-label" htmlFor="hero-headline">Hero Headline</label>
+				<FormLabel
+				  htmlFor="hero-headline"
+				  required={false}
+				>
+				 {this.props.title}
+				 </FormLabel>
 				<ReactQuill 
 			  		name="hero-headline"
 			  		id="hero-headline" 
 			  		value={headline||''}
 			  		onChange={(value)=>this.handleEditorChange(value)} 
 			  		modules={this.modules}
+			  		theme='bubble'
 			  		/>
 	  		</>
 		)
