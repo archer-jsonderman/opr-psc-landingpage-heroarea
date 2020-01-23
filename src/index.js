@@ -87,6 +87,7 @@ constructor(props){
 	      <SvgSymbols className='symbols'/>
 		    <Headline 
 		    	onStateChange={this.handleStateChange}
+		    	title='Hero Area Headline'
 		    	{...this.state}/>
 		    <Repeater
 		    	sdk={this.props.sdk}
