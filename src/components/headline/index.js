@@ -26,15 +26,11 @@ export default class Headline extends React.Component{
 		//headline must be empty string and n ot undefined object or Quill has an issue
 		return(
 			<>
-				<FormLabel
-				  htmlFor="hero-headline"
-				  required={false}
-				>
-				 {this.props.title}
-				 </FormLabel>
+				
 				<ReactQuill 
 			  		name="hero-headline"
 			  		id="hero-headline" 
+			  		placeholder='Add your headline...'
 			  		value={headline||''}
 			  		onChange={(value)=>this.handleEditorChange(value)} 
 			  		modules={this.modules}

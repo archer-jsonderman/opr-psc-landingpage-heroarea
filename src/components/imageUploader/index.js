@@ -357,7 +357,6 @@ export default class Uploader extends React.Component {
     if (this.state.uploading) {
       return (
 	      <>
-	      <label className="FormLabel__FormLabel___3d6zQ" data-test-id="cf-ui-form-label" >Hero Image</label>
         <ProgressView
           imageUrl={this.state.imageUrl}
           base64Prefix={this.state.base64Prefix}
@@ -370,8 +369,6 @@ export default class Uploader extends React.Component {
       // Display existing asset if user is not dragging over an image
       return (
 	    <>
-	   <label className="FormLabel__FormLabel___3d6zQ" data-test-id="cf-ui-form-label" >Hero Image</label>
-
         <FileView
           file={this.state.asset.fields.file[this.findProperLocale()]}
           isPublished={
@@ -399,7 +396,6 @@ export default class Uploader extends React.Component {
 
     return (
 	    <>
-	    <label className="FormLabel__FormLabel___3d6zQ" data-test-id="cf-ui-form-label" >Hero Image</label>
 	      <UploadView
 	        isDraggingOver={this.state.isDraggingOver}
 	        onDrop={this.onDropFiles}
