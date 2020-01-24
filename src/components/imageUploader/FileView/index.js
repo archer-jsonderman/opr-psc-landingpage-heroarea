@@ -42,32 +42,6 @@ export default function FileView(props) {
           <Asset type={type} className="file-type-icon" />
         </header>
       )}
-      <section className="details">
-        <main>
-          <nav className="buttonset">
-	          <Heading className="filename">{file.fileName}</Heading>
-	          
-	        </nav>
-
-          
-          {type === "image" ? (
-            <Paragraph >
-              <strong>Dimensions:</strong> {file.details.image.width}x
-              {file.details.image.height}
-            </Paragraph>
-          ) : null}
-          <Paragraph >
-            <strong>Size:</strong> {prettySize}
-          </Paragraph>
-          <Button
-	            buttonType="muted"
-	            className="button"
-	            onClick={props.onClickRemove}
-	          >
-	            Remove
-	          </Button>
-        </main>
-              </section>
     </Dropzone>
     
         </>

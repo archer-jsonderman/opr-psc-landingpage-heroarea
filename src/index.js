@@ -45,7 +45,7 @@ constructor(props){
 	super(props)
 	let pagevalue = this.props.sdk.field.getValue();
 	
-	if(pagevalue===null){
+	if(pagevalue===null || !pagevalue){
 		pagevalue = initialData
 	}
 	if(!pagevalue.image)pagevalue.image={};

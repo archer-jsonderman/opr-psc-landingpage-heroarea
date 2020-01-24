@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {SortableContainer, SortableElement, SortableHandle} from 'react-sortable-hoc';
 import update from 'immutability-helper';
 import arrayMove from 'array-move';
-import ReactQuill from 'react-quill';
+import ReactQuill,{Quill} from 'react-quill';
 import 'react-quill/dist/quill.bubble.css';
 import {
 	CardDragHandle,
@@ -15,6 +15,13 @@ import FontIconPicker from '@fonticonpicker/react-fonticonpicker';
 import '@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.base-theme.react.css';
 import '@fonticonpicker/react-fonticonpicker/dist/fonticonpicker.material-theme.react.css';
 import './index.scss'; 
+
+
+let Block = Quill.import('blots/block');
+class BaseBlot extends Block{ }
+BaseBlot.blotName = 'block';
+BaseBlot.tagName = 'f';
+Quill.register('blots/block', BaseBlot);
 
 //can this be passed or generated from parcel svgr
 const icons = [
@@ -132,10 +139,10 @@ export default class Repeater extends React.Component {
 	}
 	onSortEnd = ({oldIndex, newIndex}) => {
 		const {items} = this.props;
-		console.log(items)	  
+		//console.log(items)	  
 		//this.setState(({items}) => ({
 	    const sorted = arrayMove(items, oldIndex, newIndex)
-	    console.log(sorted, 'osrt end')
+	    //console.log(sorted, 'osrt end')
 	    this.props.onStateChange('items',sorted)
 		//pass state to parent props
 		//how to do the array move in immutability-helper
