@@ -19,7 +19,6 @@ import "./index.css"
 export default class Uploader extends React.Component {
 	constructor(props){
 		super(props)
-		//console.log(this.props,' image')
 		this.state = {
 			isDraggingOver: false,
 		}
@@ -27,9 +26,7 @@ export default class Uploader extends React.Component {
 
   componentDidMount() {
 	const {image} = (typeof this.props!== 'undefined' && this.props)||'';
-	//console.log(this.props.image,'uploading')  
-    if (image.sys) {
-	    //console.log(image, 'uploader')
+    if (image!==null && image.sys) {
       this.props.sdk.space
         .getAsset(image.sys.id)
         .then(asset => this.setState({ asset }))

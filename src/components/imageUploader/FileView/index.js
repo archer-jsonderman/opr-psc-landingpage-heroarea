@@ -35,13 +35,31 @@ export default function FileView(props) {
       onDragOverEnd={props.onDragOverEnd}
     >
    
-      {type === "image" ? (
+     {type === "image" ? (
         <header style={bg} />
       ) : (
         <header>
           <Asset type={type} className="file-type-icon" />
         </header>
       )}
+      <section className="details">
+        <main>
+          <nav className="buttonset">
+	          <Heading className="filename">{file.fileName}</Heading>
+	          
+	        </nav>
+
+          
+            <Button
+	            buttonType="muted"
+	            className="button"
+	            onClick={props.onClickRemove}
+	          >
+	            Remove
+	          </Button>
+        </main>
+      </section>
+
     </Dropzone>
     
         </>
