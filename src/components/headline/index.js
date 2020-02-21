@@ -5,11 +5,7 @@ import {FormLabel} from "@contentful/forma-36-react-components"
 import ReactQuill,{Quill} from 'react-quill';
 import 'react-quill/dist/quill.bubble.css';
 import './index.scss'
-let Block = Quill.import('blots/block');
-class BaseBlot extends Block{ }
-BaseBlot.blotName = 'block';
-BaseBlot.tagName = 'f';
-Quill.register('blots/block', BaseBlot);
+
 
 export default class Headline extends React.Component{
 	constructor(props){
