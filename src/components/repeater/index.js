@@ -33,7 +33,16 @@ const icons = [
 		  	'symbol-defs_svg__icon-no-exams',
 		  	'symbol-defs_svg__icon-piggy-bank',
 		  	'symbol-defs_svg__icon-trophy',
-		  	'symbol-defs_svg__icon-two-calendars'	
+		  	'symbol-defs_svg__icon-two-calendars',
+		  	'symbol-defs_svg__icon-accredited',
+		  	'symbol-defs_svg__icon-academic-excellence',
+		  	'symbol-defs_svg__icon-graduate',
+		  	'symbol-defs_svg__icon-class-ratio',
+		  	'symbol-defs_svg__icon-credit-transfer',
+		  	'symbol-defs_svg__icon-start-times',
+		  	'symbol-defs_svg__icon-online-clases',
+		  	'symbol-defs_svg__icon-transfer-arrows'
+		  		
 	  	]
 
 //Custom render script for FontIconPicker	  	
